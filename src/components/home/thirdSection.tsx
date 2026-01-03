@@ -1,4 +1,3 @@
-import React from "react";
 import thirdImage from "/thirdSection/third-section-illustration.png";
 
 export default function CourierPartnersSection() {
