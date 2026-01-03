@@ -11,7 +11,7 @@ const Logo = () => {
 
   return (
     <Link className="w-full h-full" to="/" onClick={(e) => handleClick(e, "/")}>
-      <img src="/Logo.svg" alt="logo" loading="lazy" className="w-28 md:w-32" />
+      <img src="/Logo.svg" alt="logo" loading="lazy" className="w-42 md:w-40" />
     </Link>
   );
 };

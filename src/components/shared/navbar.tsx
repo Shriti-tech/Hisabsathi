@@ -68,11 +68,8 @@ const Navbar = () => {
         <div>
           <Logo />
         </div>
-
-        {/* Desktop Navigation Menu */}
         <NavigationMenuDropDown />
 
-        {/* Login Button - Desktop */}
         <Button
           className="font-medium hidden md:flex bg-white border border-gray-300 text-gray-700 bg-[#F2F2F2] rounded-md"
           variant="outline"

@@ -16,7 +16,7 @@ const IndustryLeadersSection: React.FC = () => {
   ];
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 overflow-hidden bg-primaryLight">
+    <div className="overflow-hidden bg-primaryLight">
       <div className="max-w-7xl mx-auto">
         <p className=" text-left text-gray-600 text-[24px] mb-8 font-outfit">
           Integrated with Industry Leaders
