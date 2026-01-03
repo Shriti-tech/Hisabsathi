@@ -16,12 +16,12 @@ const IndustryLeadersSection: React.FC = () => {
   ];
 
   return (
-    <div className="overflow-hidden bg-primaryLight">
-      <div className="max-w-7xl mx-auto">
+    <div className=" bg-primaryLight">
+      <div className="max-w-7xl mx-auto  overflow-hidden ">
         <p className=" text-left text-gray-600 text-[24px] mb-8 font-outfit">
           Integrated with Industry Leaders
         </p>
-        <div className="relative">
+        <div className="relative max-w-7xl">
           <div className="flex animate-marquee ">
             {/* First set of logos */}
             {logos.map((logo, index) => (

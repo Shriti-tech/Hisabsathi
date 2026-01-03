@@ -1,24 +1,23 @@
-import thirdImage from "/thirdSection/third-section-illustration.png";
+import thirdImage from "/thirdSection/third-image.png";
 
 export default function CourierPartnersSection() {
   return (
-    <div className="bg-white py-12 px-6 lg:px-16">
+    <div className="bg-background  min-h-screen w-full flex justify-center items-center  ">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
           <div className="space-y-6">
-            <h2 className="font-instrument text-4xl lg:text-5xl text-foreground leading-tight">
-              Get all Courier Partners in one place
+            <h2 className="font-instrument text-56 text-foreground leading-tight">
+              Create customer invoices in seconds
             </h2>
-            
-            <p className="font-outfit text-base lg:text-lg text-textgray leading-relaxed">
-              Switching between courier portals, rate sheets, and random files will waste time and hinder your workflow. One place for every order keeps your entire operation clean and predictable.
+
+            <p className="font-outfit text-24 font-outfit text-input font-light">
+              Forget Excel templates. Your invoices are created automatically
+              and always stay organised. You can set auto reminders and mail
+              invoices directly.
             </p>
           </div>
-
-          {/* Right Side - Placeholder for your image */}
           <div className="flex items-center justify-center">
-            <div className="w-full h-64 bg-muted rounded-lg flex items-center justify-center">
+            <div className="w-full h-auto">
               <img src={thirdImage} alt="Third Section Illustration" />
             </div>
           </div>
