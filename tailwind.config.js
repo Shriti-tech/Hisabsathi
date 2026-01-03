@@ -51,7 +51,15 @@ module.exports = {
         xl: 'var(--shadow-xl)',
         '2xl': 'var(--shadow-2xl)',
       },
-     
+     keyframes: {
+        'logo-cloud': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(calc(-100% - 4rem))' },
+        },
+      },
+      animation: {
+        'logo-cloud': 'logo-cloud 30s linear infinite',
+      },
     
     },
   },

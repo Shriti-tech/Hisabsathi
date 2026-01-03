@@ -1,78 +1,79 @@
-import React from "react";
+const logos = [
+  {
+    name: "BlueDart",
+    url: "/marqueeImages/bludart.png",
+  },
+  {
+    name: "Delhivery",
+    url: "/marqueeImages/delhivery.png",
+  },
+  {
+    name: "DHL",
+    url: "/marqueeImages/dhl.svg",
+  },
+  {
+    name: "DTDC",
+    url: "/marqueeImages/dtdc.svg",
+  },
+  {
+    name: "eKart",
+    url: "/marqueeImages/ekart.svg",
+  },
+  {
+    name: "FedEx",
+    url: "/marqueeImages/fedex.png",
+  },
+  {
+    name: "Movin",
+    url: "/marqueeImages/movin.png",
+  },
+  {
+    name: "Rivigo",
+    url: "/marqueeImages/rivigo.svg",
+  },
+  {
+    name: "SelfExpress",
+    url: "/marqueeImages/selfEx.svg",
+  },
+  {
+    name: "shreeMaruti",
+    url: "/marqueeImages/shreemaruti.svg",
+  },
+  {
+    name: "XpressBees",
+    url: "/marqueeImages/xpressbees.svg",
+  },
+];
 
-const IndustryLeadersSection: React.FC = () => {
-  const logos = [
-    { src: "/marqueeImages/bludart.png", alt: "BlueDart" },
-    { src: "/marqueeImages/delhivery.png", alt: "Shadowfax" },
-    { src: "/marqueeImages/dhl.svg", alt: "DHL" },
-    { src: "/marqueeImages/dtdc.svg", alt: "DTDC" },
-    { src: "/marqueeImages/ekart.svg", alt: "eKart" },
-    { src: "/marqueeImages/fedex.png", alt: "FedEx" },
-    { src: "/marqueeImages/movin.png", alt: "Movin" },
-    { src: "/marqueeImages/rivigo.svg", alt: "Rivigo" },
-    { src: "/marqueeImages/selfEx.svg", alt: "SelfExpress" },
-    { src: "/marqueeImages/shreemaruti.svg", alt: "shreeMaruti" },
-    { src: "/marqueeImages/xpressbees.svg", alt: "XpressBees" },
-  ];
-
+const AnimatedLogoCloud = () => {
   return (
-    <div className=" bg-primaryLight">
-      <div className="max-w-7xl mx-auto  overflow-hidden ">
+    <div className="w-full py-12 bg-background ">
+      <div className="mx-auto max-w-7xl w-full  md:px-8">
         <p className=" text-left text-gray-600 text-[24px] mb-8 font-outfit">
           Integrated with Industry Leaders
         </p>
-        <div className="relative max-w-7xl">
-          <div className="flex animate-marquee ">
-            {/* First set of logos */}
-            {logos.map((logo, index) => (
+        <div className="group relative mt-6 flex gap-6 overflow-hidden p-2 ">
+          {Array(5)
+            .fill(null)
+            .map((_, index) => (
               <div
-                key={`first-${index}`}
-                className="flex-shrink-0 mx-8 md:mx-12"
+                key={index}
+                className="flex shrink-0 animate-logo-cloud flex-row justify-around gap-6"
               >
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-8 md:h-10 object-contain"
-                />
+                {logos.map((logo, key) => (
+                  <img
+                    key={key}
+                    src={logo.url}
+                    className="h-12  px-5 "
+                    alt={`${logo.name}`}
+                  />
+                ))}
               </div>
             ))}
-            {logos.map((logo, index) => (
-              <div
-                key={`second-${index}`}
-                className="flex-shrink-0 mx-8 md:mx-12"
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-8 md:h-10 object-contain"
-                />
-              </div>
-            ))}
-          </div>
         </div>
       </div>
-
-      <style>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        
-        .animate-marquee {
-          display: flex;
-          animation: marquee 20s linear infinite;
-        }
-        
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </div>
   );
 };
 
-export default IndustryLeadersSection;
+export default AnimatedLogoCloud;
