@@ -1,11 +1,9 @@
-import thirdImage from "/thirdSection/third-image.png";
-import FourthSection from "@/components/home/fourthSection";
-import FifthSection from "@/components/home/fifthSection";
-export default function CourierPartnersSection() {
+import fifthImage from "/fifthSection/fifth-section-illustration.png";
+
+export default function FifthSection() {
   return (
-    <div className="bg-background  min-h-screen w-full flex flex-col justify-center items-center  ">
-      <div className="bg-background   w-full flex justify-center items-center p-10 ">
- <div className="max-w-7xl mx-auto  ">
+    <div className="bg-background  h-auto  w-full flex justify-center items-center p-10  ">
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h2 className="font-instrument text-56 text-foreground leading-tight">
@@ -20,16 +18,11 @@ export default function CourierPartnersSection() {
           </div>
           <div className="flex items-center justify-center">
             <div className="w-full h-auto">
-              <img src={thirdImage} alt="Third Section Illustration" />
+              <img src={fifthImage} alt="Fifth Section Illustration" />
             </div>
           </div>
         </div>
-        
       </div>
-      </div>
-     
-        <FourthSection />
-      <FifthSection />
     </div>
   );
 }

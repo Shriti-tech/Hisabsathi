@@ -62,7 +62,7 @@ const NavigationMenuDropDown = () => {
 };
 const Navbar = () => {
   return (
-    <nav className="w-full h-20 flex items-center font-outfit px-5 md:px-10 lg:px-14 2xl:px-64 bg-[#FAFBFF] fixed top-0 z-50 text-16">
+    <nav className="w-full h-20 flex items-center font-outfit px-5 md:px-10  2xl:px-74 bg-[#FAFBFF] fixed top-0 z-50 text-16">
       <div className="w-full flex items-center justify-between">
         {/* Logo */}
         <div>
