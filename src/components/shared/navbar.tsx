@@ -5,6 +5,7 @@ import { Sheet, SheetClose, SheetContent, SheetTrigger } from "../ui/sheet";
 import { AlignJustify } from "lucide-react";
 import Logo from "./logo";
 import { NavmenuItems, MobileNavmenuItems } from "../../constants/navitems";
+import useMobile from "@/hooks/useMobile";
 
 const NavContent = ({ closeSheet }: { closeSheet?: () => void }) => {
   return (
@@ -15,7 +16,7 @@ const NavContent = ({ closeSheet }: { closeSheet?: () => void }) => {
             <SheetClose asChild>
               <NavLink
                 to={item.path}
-                className="text-lg font-medium text-input "
+                className="text-lg font-medium text-input"
                 onClick={closeSheet}
               >
                 {item.title}
@@ -46,13 +47,13 @@ const NavigationMenuDropDown = () => {
   };
 
   return (
-    <div className="hidden md:flex items-center space-x-8">
+    <div className="flex items-center space-x-4 lg:space-x-8">
       {NavmenuItems.map((item, index) => (
         <NavLink
           key={index}
           to={item.path}
           onClick={(e) => handleClick(e, item.path)}
-          className="text-input transition-colors font-medium"
+          className="text-base font-medium text-input transition-colors whitespace-nowrap"
         >
           {item.title}
         </NavLink>
@@ -60,46 +61,53 @@ const NavigationMenuDropDown = () => {
     </div>
   );
 };
+
 const Navbar = () => {
+  const isMobile = useMobile();
+
   return (
-    <nav className="w-full h-20 flex items-center font-outfit px-5 md:px-10  2xl:px-74 bg-[#FAFBFF] fixed top-0 z-50 text-16">
-      <div className="w-full flex items-center justify-between">
-        {/* Logo */}
-        <div>
+    <nav className="w-full h-16 sm:h-20 flex items-center font-outfit px-4 sm:px-5 md:px-10 lg:px-16 xl:px-20 2xl:px-74 bg-background fixed top-0 z-50">
+      <div className="w-full flex items-center justify-between gap-4">
+        <div className="flex-shrink-0">
           <Logo />
         </div>
-        <NavigationMenuDropDown />
-
-        <Button
-          className="font-medium hidden md:flex bg-white border border-gray-300 text-input bg-background rounded-md"
-          variant="outline"
-          asChild
-        >
-          <Link to="/login">Login to portal</Link>
-        </Button>
-
-        {/* Mobile Menu */}
-        <div className="md:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <AlignJustify className="size-6 shrink-0 cursor-pointer" />
-            </SheetTrigger>
-            <SheetContent
-              side="left"
-              className="bg-white border-none flex flex-col gap-2 max-w-[80vw]"
+        {!isMobile ? (
+          <>
+            <NavigationMenuDropDown />
+            <Button
+              className="font-medium bg-white border-2 border-[#D9D9D9] bg-[#F2F2F2] rounded-xl text-sm lg:text-base px-3 py-5 whitespace-nowrap shadow"
+              variant="outline"
+              asChild
             >
-              <div className="flex flex-col space-y-10">
-                <Logo />
-                <NavContent />
-                <SheetClose asChild>
-                  <Button className="font-medium cursor-pointer text-background" asChild>
-                    <Link to="/login">Login to portal</Link>
-                  </Button>
-                </SheetClose>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
+              <Link to="/login">Login to portal</Link>
+            </Button>
+          </>
+        ) : (
+          <div className="flex-shrink-0">
+            <Sheet>
+              <SheetTrigger asChild>
+                <AlignJustify className="size-6 shrink-0 cursor-pointer" />
+              </SheetTrigger>
+              <SheetContent
+                side="left"
+                className="bg-white border-none flex flex-col gap-2 w-[280px] sm:w-[320px] max-w-[80vw]"
+              >
+                <div className="flex flex-col space-y-10">
+                  <Logo />
+                  <NavContent />
+                  <SheetClose asChild>
+                    <Button
+                      className="font-medium cursor-pointer text-input bg-primary text-white"
+                      asChild
+                    >
+                      <Link to="/login">Login to portal</Link>
+                    </Button>
+                  </SheetClose>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        )}
       </div>
     </nav>
   );

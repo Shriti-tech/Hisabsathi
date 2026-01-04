@@ -10,8 +10,17 @@ const Logo = () => {
   };
 
   return (
-    <Link className="w-full h-full" to="/" onClick={(e) => handleClick(e, "/")}>
-      <img src="/Logo.svg" alt="logo" loading="lazy" className="w-42 md:w-40" />
+    <Link
+      className="w-full h-full flex items-center"
+      to="/"
+      onClick={(e) => handleClick(e, "/")}
+    >
+      <img
+        src="/Logo.svg"
+        alt="logo"
+        loading="lazy"
+        className="w-32 sm:w-36 md:w-40 lg:w-44 h-auto"
+      />
     </Link>
   );
 };
