@@ -2,7 +2,7 @@ import fourthImage from "/fourthSection/fourth-section-illustration.png";
 
 function FourthSection() {
   return (
-    <div className="bg-background w-full flex justify-center items-center px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 lg:p-10">
+    <div className="bg-background w-full flex justify-center items-center py-3 lg:py-16 px-4">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
           <div className="flex items-center justify-center order-1 lg:order-1">

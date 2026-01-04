@@ -51,24 +51,24 @@ const logos = [
 
 const AnimatedLogoCloud = () => {
   return (
-    <div className="w-full py-8 sm:py-12  bg-background">
-      <div className="mx-auto max-w-7xl w-full px-4 lg:px-0 ">
-        <p className="text-left text-gray-600 text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 font-outfit">
+    <div className="w-full  py-8 sm:py-12  px-4 bg-background  py-10">
+      <div className="mx-auto max-w-7xl w-full ">
+        <p className="text-left text-gray-600 text-lg sm:text-xl md:text-2xl mb-4 font-outfit">
           Integrated with Industry Leaders
         </p>
-        <div className="group relative mt-4 sm:mt-6 flex gap-4 sm:gap-6 overflow-hidden p-2 ">
+        <div className="group relative  flex  overflow-hidden p-1  ">
           {Array(5)
             .fill(null)
             .map((_, index) => (
               <div
                 key={index}
-                className="flex shrink-0 animate-logo-cloud flex-row justify-around gap-4 sm:gap-6"
+                className="flex shrink-0 animate-logo-cloud flex-row  gap-3"
               >
                 {logos.map((logo, key) => (
                   <img
                     key={key}
                     src={logo.url}
-                    className="h-12  px-5 "
+                    className="h-14 lg:h-28"
                     alt={`${logo.name}`}
                   />
                 ))}
