@@ -35,7 +35,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-background w-full flex justify-center pt-12 md:pt-20 px-4 font-outfit ">
+    <footer className="bg-background w-full flex justify-center pt-12 md:pt-20 px-4 font-outfit left-0 right-0 z-40 bottom-0">
       <div className="flex flex-col max-w-7xl bg-white shadow-sm mx-auto w-full py-8 md:py-12 px-6 md:px-12 border-2 border-inputBorder rounded-t-3xl">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-6  ">

@@ -4,7 +4,7 @@ export const NavmenuItems = [
   { title: "Company", path: "#company" },
   { title: "Blog", path: "#blog" },
   { title: "Pricing", path: "#pricing" },
-  { title: "Contact", path: "#contact" },
+  { title: "Contact", path: "/contact" },
 ];
 
 export const MobileNavmenuItems = NavmenuItems;
