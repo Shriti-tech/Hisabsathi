@@ -79,7 +79,7 @@ const Navbar = () => {
               variant="outline"
               asChild
             >
-              <Link to="/login">Login to portal</Link>
+              <Link to="/">Login to portal</Link>
             </Button>
           </>
         ) : (
@@ -100,7 +100,7 @@ const Navbar = () => {
                       className="font-medium cursor-pointer text-input bg-primary text-white"
                       asChild
                     >
-                      <Link to="/login">Login to portal</Link>
+                      <Link to="/">Login to portal</Link>
                     </Button>
                   </SheetClose>
                 </div>

@@ -1,8 +1,8 @@
-import fourthImage from "/fourthSection/fourth-section-illustration.png";
+import fourthImage from "/feature-two/feature-two-illustration.png";
 
-function FourthSection() {
+function FeatureTwo() {
   return (
-    <div className="bg-background w-full flex justify-center items-center py-3 lg:py-16 px-4">
+    <div className="bg-background w-full min-h-[80vh] flex justify-center items-center py-8 lg:py-16 px-4">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
           <div className="flex items-center justify-center order-1 lg:order-1">
@@ -10,7 +10,7 @@ function FourthSection() {
               <img
                 src={fourthImage}
                 alt="Fourth Section Illustration"
-                className="w-full h-auto"
+                className="w-full h-auto object-cover"
               />
             </div>
           </div>
@@ -19,7 +19,7 @@ function FourthSection() {
               Manage customer ledgers and never miss out again
             </h2>
 
-            <p className="font-outfit text-base sm:text-lg md:text-xl lg:text-24 text-input font-light leading-relaxed">
+            <p className="font-outfit text-base sm:text-lg md:text-xl lg:text-xl text-input font-light leading-relaxed">
               No loose entries. No missed balances. Every customer record stays
               clear and organised. This is your smarter Khata Book system.
             </p>
@@ -29,4 +29,4 @@ function FourthSection() {
     </div>
   );
 }
-export default FourthSection;
+export default FeatureTwo;

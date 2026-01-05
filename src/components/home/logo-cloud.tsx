@@ -56,24 +56,34 @@ const AnimatedLogoCloud = () => {
         <p className="text-left text-gray-600 text-lg sm:text-xl md:text-2xl mb-4 font-outfit">
           Integrated with Industry Leaders
         </p>
-        <div className="group relative  flex  overflow-hidden p-1  ">
-          {Array(5)
-            .fill(null)
-            .map((_, index) => (
-              <div
-                key={index}
-                className="flex shrink-0 animate-logo-cloud flex-row  gap-3"
-              >
-                {logos.map((logo, key) => (
-                  <img
-                    key={key}
-                    src={logo.url}
-                    className="h-14 lg:h-28"
-                    alt={`${logo.name}`}
-                  />
-                ))}
-              </div>
-            ))}
+        <div className="relative">
+          <div
+            className="group relative flex overflow-hidden gap-3 py-3"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent 1%, black 17%, black 85%, transparent 100%)",
+              maskImage:
+                "linear-gradient(to right, transparent 1%, black 17%, black 85%, transparent 100%)",
+            }}
+          >
+            {Array(5)
+              .fill(null)
+              .map((_, index) => (
+                <div
+                  key={index}
+                  className="flex shrink-0 animate-logo-cloud flex-row gap-3"
+                >
+                  {logos.map((logo, key) => (
+                    <img
+                      key={key}
+                      src={logo.url}
+                      className="h-8 lg:h-14 "
+                      alt={logo.name}
+                    />
+                  ))}
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     </div>

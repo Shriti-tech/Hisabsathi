@@ -63,7 +63,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
 
 const TestimonialMarquee: React.FC = () => {
   return (
-    <div className="w-full bg-background py-12 md:py-16 px-4 ">
+    <div className="w-full bg-background py-12 md:py-16 px-4 min-h-[80vh] ">
     
         
       <div className="max-w-7xl mx-auto mb-10 md:mb-12">

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Phone, Mail, Star } from "lucide-react";
+import {  Star } from "lucide-react";
 import { personImages } from "@/constants/person";
-
+import Mail from "/public/contact-icons/mail.png";
+import Whatsapp from "/public/contact-icons/whatsapp.png";
 interface FormData {
   name: string;
   phone: string;
@@ -21,73 +22,65 @@ const ContactForm: React.FC = () => {
 
   const messageOptions = [
     "I want to schedule a demo",
-    "I want to know more about Swipe",
+    "I want to know more about Hisaab Sathi",
     "Help me with pricing details",
     "I have a question about a feature",
     "know more about a feature",
   ];
 
   const handleOptionClick = (option: string) => {
-  setFormData((prev) => ({
-    ...prev,
-    selectedOptions: prev.selectedOptions.includes(option)
-      ? prev.selectedOptions.filter((opt) => opt !== option)
-      : [...prev.selectedOptions, option],
-    message: prev.selectedOptions.includes(option)
-      ? prev.message.replace(option, "").replace(/\n\n+/g, "\n").trim()
-      : prev.message + (prev.message ? "\n" : "") + option,
-  }));
-};
+    setFormData((prev) => ({
+      ...prev,
+      selectedOptions: [option],
+      message: option,
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
   };
 
-
   return (
     <div className="bg-background w-full  flex items-center justify-center px-4 p-3 mt-20">
       <div className="w-full max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16">
-         
           <div className="w-full lg:w-1/2 bg-background">
             <div className="flex flex-col space-y-8 md:space-y-10 lg:space-y-12">
               <div className="space-y-4 md:space-y-6">
-                <h1 className="font-instrument text-4xl sm:text-5xl lg:text-[56px] leading-tight">
-                  Get in touch
-                  <br />
-                  with us
+                <h1 className="font-instrument text-5xl leading-tight">
+                  Get in touch with us
                 </h1>
 
-                <p className="font-outfit text-input text-base sm:text-lg max-w-md">
-                  Get help with pricing plans, schedule a demo, explore use-cases
-                  for your business, and more.
+                <p className="font-outfit font-light text-input">
+                  Get help with pricing plans, schedule a demo, explore
+                  use-cases for your business, and more.
                 </p>
               </div>
 
               <div className="space-y-4 md:space-y-6">
-                <h2 className="font-outfit font-semibold text-input text-lg sm:text-xl">
+                <h2 className="font-outfit font-light text-input text">
                   Contact Information
                 </h2>
-                <p className="font-outfit text-sm sm:text-base text-gray-600">
+                <p className="font-outfit font-light text-input ">
                   Reach out to sales. We respond fast!
                 </p>
 
                 <div className="space-y-3 md:space-y-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-black flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
-                    </div>
-                    <span className="text-base sm:text-lg font-medium font-outfit text-gray-700">
-                      +91 XXXXX XXXXX
+                  
+                    <img src={Whatsapp} alt="" className="h-8 w-8"/>
+                    
+                    <span className="text-base sm:text-lg font-light font-outfit text-gray-700">
+                    +91 96747 71591
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-black flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
-                    </div>
-                    <span className="text-base sm:text-lg font-outfit font-medium text-gray-700">
-                      contact@example.com
+                   
+                     <img src={Mail} alt="" className="h-8 w-8" />
+                  
+                    <span className="text-base sm:text-lg font-outfit font-light text-gray-700">
+                      support@hisaabsathi.com
                     </span>
                   </div>
                 </div>
@@ -119,15 +112,12 @@ const ContactForm: React.FC = () => {
                     ))}
                   </div>
                 </div>
-                <p className="text-gray-600 font-outfit text-sm sm:text-base font-medium">
-                  Trusted by 20,00,000+ businesses
-                </p>
               </div>
             </div>
           </div>
 
           {/* Right Section - Form */}
-          <div className="w-full lg:w-1/2 font-outfit">
+          <div className="w-full lg:w-1/2 min-h-[80vh] font-outfit">
             <form
               onSubmit={handleSubmit}
               className="space-y-5 md:space-y-6 p-6 sm:p-8 md:p-10 bg-white border-2 rounded-lg border-inputBorder"

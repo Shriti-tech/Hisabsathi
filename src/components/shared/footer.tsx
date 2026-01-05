@@ -35,7 +35,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-background w-full flex justify-center pt-12 md:pt-20 px-4 font-outfit left-0 right-0 z-40 bottom-0">
+    <footer className="bg-background w-full flex justify-center pt-12 md:pt-20 px-4 font-outfit left-0 right-0 z-40 bottom-0 font-light">
       <div className="flex flex-col max-w-7xl bg-white shadow-sm mx-auto w-full py-8 md:py-12 px-6 md:px-12 border-2 border-inputBorder rounded-t-3xl">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-6  ">
@@ -70,19 +70,19 @@ const Footer: React.FC = () => {
             <h4 className="">Quick Links</h4>
             <nav className="flex flex-col gap-2">
               <FooterLink href="/">Home</FooterLink>
-              <FooterLink href="/features">Features</FooterLink>
-              <FooterLink href="/company">Company</FooterLink>
-              <FooterLink href="/blog">Blog</FooterLink>
-              <FooterLink href="/pricing">Pricing</FooterLink>
+              <FooterLink href="/">Features</FooterLink>
+              <FooterLink href="/">Company</FooterLink>
+              <FooterLink href="/">Blog</FooterLink>
+              <FooterLink href="/">Pricing</FooterLink>
             </nav>
           </div>
           <div className="flex flex-col gap-4">
             <h4 className="">Legal</h4>
             <nav className="flex flex-col gap-2">
-              <FooterLink href="/privacy">Privacy Policy</FooterLink>
-              <FooterLink href="/refund">Refund Policy</FooterLink>
-              <FooterLink href="/terms">Terms of Service</FooterLink>
-              <FooterLink href="/refer-and-earn">Refer & Earn</FooterLink>
+              <FooterLink href="/">Privacy Policy</FooterLink>
+              <FooterLink href="/">Refund Policy</FooterLink>
+              <FooterLink href="/">Terms of Service</FooterLink>
+              <FooterLink href="/">Refer & Earn</FooterLink>
             </nav>
           </div>
 
@@ -90,9 +90,9 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-4">
             <h4 className="">Explore</h4>
             <nav className="flex flex-col gap-2">
-              <FooterLink href="/blogs">Blogs</FooterLink>
-              <FooterLink href="/updates">Product Updates</FooterLink>
-              <FooterLink href="/careers">We are hiring</FooterLink>
+              <FooterLink href="/">Blogs</FooterLink>
+              <FooterLink href="/">Product Updates</FooterLink>
+              <FooterLink href="/">We are hiring</FooterLink>
             </nav>
           </div>
         </div>

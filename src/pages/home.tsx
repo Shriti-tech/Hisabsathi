@@ -1,15 +1,19 @@
 import HeroSection from "@/components/home/hero";
-import ThirdSection from "@/components/home/thirdSection";
-import IndustryLeadersSection from "@/components/home/marquee";
-import TestimonialMarquee from "@/components/home/sixthSection";
+import FeatureOne from "@/components/home/featureOne";
+import AnimatedLogoCloud from "@/components/home/logo-cloud";
+import TestimonialMarquee from "@/components/home/testimonial";
 import FAQAccordion from "@/components/home/faqSection";
 import EightSection from "@/components/home/eightSection";
+import FeatureTwo from "@/components/home/featureTwo";
+import FeatureThree from "@/components/home/featureThree";
 function Home() {
   return (
     <>
       <HeroSection />
-      <IndustryLeadersSection />
-      <ThirdSection />
+      <AnimatedLogoCloud />
+      < FeatureOne/>
+      < FeatureTwo />
+      <FeatureThree />
       <TestimonialMarquee />
       <FAQAccordion />
       <EightSection />

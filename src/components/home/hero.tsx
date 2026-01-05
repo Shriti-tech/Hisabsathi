@@ -1,4 +1,3 @@
-import { Star } from "lucide-react";
 import { useState } from "react";
 import useMobile from "@/hooks/useMobile";
 const HeroSection = () => {
@@ -33,8 +32,8 @@ const HeroSection = () => {
 
               <p
                 className={`${
-                  isMobile ? "text-base sm:text-lg" : "text-lg lg:text-24 "
-                } font-outfit font-light leading-relaxed`}
+                  isMobile ? "text-base sm:text-lg" : "text-xl "
+                } font-outfit font-light  `}
               >
                 Fast, simple, and easy to use — manage your daily billing and
                 accounts smoothly with our software in just few seconds.
@@ -70,7 +69,7 @@ const HeroSection = () => {
             </div>
 
             {/* Rating */}
-            <div className="flex items-center gap-3 flex-wrap">
+            {/* <div className="flex items-center gap-3 flex-wrap">
               <div className="flex gap-1">
                 {[...Array(4)].map((_, i) => (
                   <Star
@@ -80,7 +79,7 @@ const HeroSection = () => {
                     } fill-star text-star`}
                   />
                 ))}
-                {/* Half Star */}
+               
                 <div className="relative">
                   <Star
                     className={`${
@@ -108,12 +107,12 @@ const HeroSection = () => {
                   4.5
                 </span>
                 <span
-                  className={`font-outfit ${isMobile ? "text-sm" : "text-xl"}`}
+                  className={`font-outfit font-light ${isMobile ? "text-sm" : "text-xl"}`}
                 >
                   Average user rating
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Image */}

@@ -6,13 +6,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { faqs } from "@/constants/faq-data.ts";
+
 const FAQAccordion: React.FC = () => {
   return (
-    <div className="bg-gray-50 py-8 px-4 sm:py-12 sm:px-6 lg:px-8 lg:py-16">
+    <div className="min-h-[80vh] bg-gray-50 py-8 px-4 sm:py-12 sm:px-6 lg:px-8 lg:py-16">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:gap-12 xl:gap-16">
           {/* Left Section - Title and CTA */}
-          <div className="w-full lg:w-2/5 xl:w-1/3 mb-8 lg:mb-0 lg:sticky lg:top-8 lg:self-start">
+          <div className="w-full h-full  lg:w-2/5 xl:w-1/3 mb-8 lg:mb-0 lg:top-8 lg:self-start">
             <h1 className="font-instrument text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-light text-gray-900 mb-3 lg:mb-4 leading-tight">
               Frequently Asked
               <br />
@@ -37,7 +38,7 @@ const FAQAccordion: React.FC = () => {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="bg-white rounded-lg border border-gray-200 px-4 sm:px-6 py-1"
+                  className="bg-white rounded-lg border border-gray-200 px-4 sm:px-6 py-1 transition-all duration-300 "
                 >
                   <AccordionTrigger className="text-left text-gray-900 font-normal text-sm sm:text-base lg:text-lg hover:no-underline py-3 sm:py-4">
                     {faq.question}
