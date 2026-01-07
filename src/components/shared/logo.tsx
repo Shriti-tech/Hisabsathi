@@ -19,7 +19,7 @@ const Logo = () => {
         src="/Logo.svg"
         alt="logo"
         loading="lazy"
-        className="w-32 sm:w-36 md:w-40 lg:w-44 h-auto"
+        className="w-32  md:w-40 lg:w-44 h-auto"
       />
     </Link>
   );

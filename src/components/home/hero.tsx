@@ -1,14 +1,56 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import useMobile from "@/hooks/useMobile";
 const HeroSection = () => {
   const [isFocused, setIsFocused] = useState(false);
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [inputValue, setInputValue] = useState<string>("");
   const isMobile = useMobile();
   if (isMobile === null) {
     return null;
   }
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    setStatus("loading");
+
+    const FORMSPREE_FORM_ID = "mbdlnkpy";
+
+    try {
+      const response = await fetch(
+        `https://formspree.io/f/${FORMSPREE_FORM_ID}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            contact: inputValue,
+            type: "demo_request",
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setStatus("success");
+        setInputValue("");
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } catch (error) {
+      console.error("Form error:", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
+  };
+
   return (
-    <div className="flex flex-col  bg-background mt-20 h-auto justify-center items-center px-4 sm:px-6 lg:px-8 lg:py-24">
-      <div className="w-full max-w-7xl   ">
+    <div className="flex flex-col  bg-background mt-20 min-h-[80vh] justify-center items-center px-4 sm:px-6 lg:px-8 lg:py-24">
+      <div className="w-full max-w-7xl mx-auto  ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center   ">
           <div className="flex flex-col gap-6 sm:gap-8 ">
             <div className="space-y-4 sm:space-y-6">
@@ -40,33 +82,46 @@ const HeroSection = () => {
               </p>
             </div>
 
-            {/* Input and Button */}
-            <div className="w-full max-w-xl">
+            <form onSubmit={handleSubmit} className="w-full max-w-xl">
               <div
-                className={`flex ${
-                  isMobile ? "flex-col gap-1" : "flex-row gap-2"
-                } border-2 ${
+                className={`flex flex-row items-stretch border-2 ${
                   isFocused ? "border-inputBorder" : "border-inputBorder"
                 } rounded-lg p-1 shadow transition-colors`}
               >
                 <input
-                  type="text"
+                  type="email"
+                  name="contact"
+                  value={inputValue}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setInputValue(e.target.value)
+                  }
                   placeholder="Enter mobile / email"
-                  className={`${
-                    isMobile ? "w-full" : "flex-1"
-                  } px-3 py-1  bg-transparent text-input placeholder:text-textgray placeholder:font-outfit placeholder:font-light outline-none text-sm sm:text-base`}
+                  className="flex-1 px-1 bg-transparent text-input placeholder:text-Input  placeholder:font-outfit placeholder:font-light outline-none text-sm sm:text-base"
                   onFocus={() => setIsFocused(true)}
                   onBlur={() => setIsFocused(false)}
+                  required
                 />
                 <button
-                  className={`font-outfit py-2 px-2 bg-primary rounded-md text-white ${
-                    isMobile ? "text-sm" : "text-16 "
-                  } shadow-md whitespace-nowrap`}
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="font-outfit py-2 px-2 bg-primary rounded-md text-white  text-sm lg:text-base shadow-md whitespace-nowrap flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Book a demo
+                  {status === "loading" ? "Sending..." : "Book a demo"}
                 </button>
               </div>
-            </div>
+              <div className="h-8 mt-2 ">
+                {status === "success" && (
+                  <p className="text-green-600 text-sm font-outfit">
+                    ✓ Request sent! We'll contact you soon.
+                  </p>
+                )}
+                {status === "error" && (
+                  <p className="text-red-600 text-sm font-outfit">
+                    ✗ Something went wrong. Please try again.
+                  </p>
+                )}
+              </div>
+            </form>
 
             {/* Rating */}
             {/* <div className="flex items-center gap-3 flex-wrap">
@@ -117,7 +172,7 @@ const HeroSection = () => {
 
           {/* Right Image */}
           <div className="flex justify-center ">
-            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl">
+            <div className="relative w-full  max-w-lg md:max-w-md lg:max-w-xl xl:max-w-2xl">
               <img
                 src="/homeImages/hero-image.png"
                 alt="Billing software illustration"

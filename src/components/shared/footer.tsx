@@ -1,5 +1,6 @@
 import React from "react";
-import { Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
+import { Instagram, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
+
 import Logo from "./logo";
 
 interface FooterLinkProps {
@@ -17,7 +18,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, label }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="w-9 h-9  bg-black  text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors"
+    className="p-2 bg-black text-white rounded-full flex items-center justify-center w-8 h-8 "
     aria-label={label}
   >
     {icon}
@@ -27,7 +28,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, label }) => (
 const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
   <a
     href={href}
-    className="text-gray-600 hover:text-gray-900 transition-colors"
+    className="text-input font-outfit font-light text-sm md:text-base lg:text-lg"
   >
     {children}
   </a>
@@ -35,73 +36,92 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-background w-full flex justify-center pt-12 md:pt-20 px-4 font-outfit left-0 right-0 z-40 bottom-0 font-light">
-      <div className="flex flex-col max-w-7xl bg-white shadow-sm mx-auto w-full py-8 md:py-12 px-6 md:px-12 border-2 border-inputBorder rounded-t-3xl">
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-          <div className="sm:col-span-2 lg:col-span-1 flex flex-col gap-6  ">
-            <div className="flex items-center gap-3 ">
+    <footer className="font-outfit bg-white w-full flex justify-center pt-8 md:pt-16 lg:pt-20 px-4 md:px-6 left-0 right-0 z-40 bottom-0 ">
+      <div className="flex flex-col max-w-7xl bg-white shadow-sm mx-auto w-full py-6 md:py-10 lg:py-12 px-4 md:px-8 lg:px-12 border-2 border-inputBorder rounded-t-2xl md:rounded-t-3xl">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols lg:grid-cols-12 gap-10 lg:gap-12">
+          {/* Logo and Social Section */}
+          <div className="flex flex-col gap-4  lg:gap-3 lg:col-span-4">
+            <div>
               <Logo />
             </div>
-            {/* Social Icons */}
-            <div className="flex items-center gap-3 ">
+            <p className="text-sm text-input md:hidden">
+              © {new Date().getFullYear()} Hisaab Sathi. All Rights Reserved.
+            </p>
+            <div className="flex items-center gap-2 md:gap-3 flex-wrap">
               <SocialLink
-                href="#"
-                icon={<Instagram size={18} />}
+                href="https://www.instagram.com/hisaabsathi"
+                icon={<Instagram className="w-4 h-4" />}
                 label="Instagram"
               />
               <SocialLink
-                href="#"
-                icon={<Facebook size={18} />}
+                href="https://www.facebook.com/hisaabsathi"
+                icon={<Facebook className="w-4 h-4" />}
                 label="Facebook"
               />
               <SocialLink
-                href="#"
-                icon={<Twitter size={18} />}
+                href="https://x.com/hisaabsathi"
+                icon={<Twitter className="w-4 h-4" />}
                 label="Twitter"
               />
               <SocialLink
-                href="#"
-                icon={<Linkedin size={18} />}
+                href="https://www.linkedin.com/company/hisaab-sathi"
+                icon={<Linkedin className="w-4 h-4" />}
                 label="LinkedIn"
+              />
+              <SocialLink
+                href="https://youtube.com/@hisaabsathi"
+                icon={<Youtube className="w-4 h-4" />}
+                label="YouTube"
               />
             </div>
           </div>
-          <div className="flex flex-col gap-4 ">
-            <h4 className="">Quick Links</h4>
-            <nav className="flex flex-col gap-2">
-              <FooterLink href="/">Home</FooterLink>
-              <FooterLink href="/">Features</FooterLink>
-              <FooterLink href="/">Company</FooterLink>
-              <FooterLink href="/">Blog</FooterLink>
-              <FooterLink href="/">Pricing</FooterLink>
-            </nav>
-          </div>
-          <div className="flex flex-col gap-4">
-            <h4 className="">Legal</h4>
-            <nav className="flex flex-col gap-2">
-              <FooterLink href="/">Privacy Policy</FooterLink>
-              <FooterLink href="/">Refund Policy</FooterLink>
-              <FooterLink href="/">Terms of Service</FooterLink>
-              <FooterLink href="/">Refer & Earn</FooterLink>
-            </nav>
-          </div>
 
-          {/* Explore */}
-          <div className="flex flex-col gap-4">
-            <h4 className="">Explore</h4>
-            <nav className="flex flex-col gap-2">
-              <FooterLink href="/">Blogs</FooterLink>
-              <FooterLink href="/">Product Updates</FooterLink>
-              <FooterLink href="/">We are hiring</FooterLink>
-            </nav>
+          {/* Links Sections Container */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-6 lg:gap-8 lg:col-span-8">
+            {/* Legal Section */}
+            <div className="flex flex-col gap-3 md:gap-4">
+              <h4 className="font-semibold text-sm md:text-base  lg:text-lg">
+                Legal
+              </h4>
+              <div className="flex flex-col gap-2 text-base md:text-sm">
+                <FooterLink href="/">Privacy Policy</FooterLink>
+                <FooterLink href="/">Refund Policy</FooterLink>
+                <FooterLink href="/">Terms of Service</FooterLink>
+                <FooterLink href="/">Refer & Earn</FooterLink>
+              </div>
+            </div>
+
+            {/* Quick Links Section */}
+            <div className="flex flex-col gap-3 md:gap-4">
+              <h4 className="font-semibold text-sm md:text-base lg:text-lg">
+                Quick Links
+              </h4>
+              <div className="flex flex-col gap-2">
+                <FooterLink href="/">Home</FooterLink>
+                <FooterLink href="/">Features</FooterLink>
+                <FooterLink href="/">Company</FooterLink>
+              </div>
+            </div>
+
+            {/* Explore Section */}
+            <div className="flex flex-col gap-3 md:gap-4">
+              <h4 className="font-semibold text-sm md:text-base lg:text-lg">
+                Explore
+              </h4>
+              <div className="flex flex-col gap-2">
+                <FooterLink href="/">Product Updates</FooterLink>
+                <FooterLink href="https://docs.google.com/forms/d/e/1FAIpQLSd3tZ8PRqxxXEBLcIBFROxgeUq_JAuzVXuNxDzHAwzh3dgtfQ/viewform?usp=dialog">
+                  We are hiring
+                </FooterLink>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-gray-200 mt-8 md:mt-12 mb-6 md:mb-8"></div>
-
-        {/* Copyright */}
-        <div className="text-center text-sm ">
+        {/* Bottom Border and Copyright */}
+        <div className="border-t border-input mt-8 md:mt-12 mb-6 md:mb-8 hidden md:block"></div>
+        <div className="text-center text-sm hidden md:block">
           <p>© {new Date().getFullYear()} Hisaab Sathi. All Rights Reserved.</p>
         </div>
       </div>

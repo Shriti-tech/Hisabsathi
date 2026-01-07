@@ -2,7 +2,7 @@ import fifthImage from "/feature-three/feature-three-illustration.png";
 
 function FeatureThree() {
   return (
-    <div className="bg-background min-h-[80vh] w-full flex justify-center items-center py-8 lg:py-16 px-4 min-h-[80vh]">
+    <div className="bg-background  w-full flex justify-center items-center py-8 lg:py-16 px-4 min-h-[80vh]">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
           <div className="space-y-4 sm:space-y-5 md:space-y-6 order-2 lg:order-1">

@@ -9,8 +9,8 @@ import { faqs } from "@/constants/faq-data.ts";
 
 const FAQAccordion: React.FC = () => {
   return (
-    <div className="min-h-[80vh] bg-gray-50 py-8 px-4 sm:py-12 sm:px-6 lg:px-8 lg:py-16">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-[80vh] flex justify-center items-center py-8 px-4 sm:py-12 sm:px-6 lg:px-8 lg:py-16 bg-background">
+      <div className="w-full  max-w-7xl">
         <div className="flex flex-col lg:flex-row lg:gap-12 xl:gap-16">
           {/* Left Section - Title and CTA */}
           <div className="w-full h-full  lg:w-2/5 xl:w-1/3 mb-8 lg:mb-0 lg:top-8 lg:self-start">

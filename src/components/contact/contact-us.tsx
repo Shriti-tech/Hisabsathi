@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import {  Star } from "lucide-react";
+import React, { useState, type FormEvent } from "react";
+import { Star } from "lucide-react";
 import { personImages } from "@/constants/person";
 import Mail from "/public/contact-icons/mail.png";
 import Whatsapp from "/public/contact-icons/whatsapp.png";
@@ -19,6 +19,9 @@ const ContactForm: React.FC = () => {
     selectedOptions: [],
     message: "",
   });
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
   const messageOptions = [
     "I want to schedule a demo",
@@ -36,9 +39,49 @@ const ContactForm: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setStatus("loading");
+    const FORMSPREE_FORM_ID = "xgovgwry"; 
+
+    try {
+      const response = await fetch(
+        `https://formspree.io/f/${FORMSPREE_FORM_ID}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            phone: formData.phone,
+            email: formData.email,
+            selectedOptions: formData.selectedOptions.join(", "),
+            message: formData.message,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          selectedOptions: [],
+          message: "",
+        });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   return (
@@ -68,20 +111,19 @@ const ContactForm: React.FC = () => {
 
                 <div className="space-y-3 md:space-y-4">
                   <div className="flex items-center gap-3">
-                  
-                    <img src={Whatsapp} alt="" className="h-8 w-8"/>
-                    
-                    <span className="text-base sm:text-lg font-light font-outfit text-gray-700">
-                    +91 96747 71591
-                    </span>
+                    <img src={Whatsapp} alt="" className="h-8 w-8" />
+
+                    <a  href="tel:+919674771591"
+                    className="text-base sm:text-lg font-light font-outfit text-gray-700">
+                      +91 96747 71591
+                    </a>
                   </div>
                   <div className="flex items-center gap-3">
-                   
-                     <img src={Mail} alt="" className="h-8 w-8" />
-                  
-                    <span className="text-base sm:text-lg font-outfit font-light text-gray-700">
+                    <img src={Mail} alt="" className="h-8 w-8" />
+
+                    <a href="mailto:support@hisaabsathi.com" className="text-base sm:text-lg font-outfit font-light text-gray-700">
                       support@hisaabsathi.com
-                    </span>
+                    </a >
                   </div>
                 </div>
               </div>
@@ -211,12 +253,21 @@ const ContactForm: React.FC = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-primary  text-white font-semibold py-3 md:py-4 rounded-md"
+                disabled={status === "loading"}
+                className="w-full bg-primary text-white font-semibold py-3 md:py-4 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Contact Us
+                {status === "loading" ? "Sending..." : "Contact Us"}
               </button>
-
-              {/* Privacy Note */}
+              {status === "success" && (
+                <div className="bg-success border border-green-200 text-green-800 px-4 py-3 rounded-lg text-center text-sm md:text-base">
+                  ✓ Message sent successfully! We'll get back to you soon.
+                </div>
+              )}
+              {status === "error" && (
+                <div className="bg-success border border-red-200 text-red-800 px-4 py-3 rounded-lg text-center text-sm md:text-base">
+                  ✗ Oops! Something went wrong. Please try again.
+                </div>
+              )}
               <p className="text-xs md:text-sm text-gray-500 text-center leading-relaxed pt-2">
                 You'll hear from us within 2 hours (during business hours). Your
                 info is safe and will never be shared.
