@@ -3,7 +3,7 @@ import AnimatedLogoCloud from "@/components/home/logo-cloud";
 import Features from "@/components/home/features";
 import TestimonialMarquee from "@/components/home/testimonial";
 import FAQAccordion from "@/components/home/faqSection";
-import EightSection from "@/components/home/eightSection";
+import Cta from "@/components/home/cta";
 
 function Home() {
   return (
@@ -13,7 +13,7 @@ function Home() {
       <Features/>
       <TestimonialMarquee />
       <FAQAccordion />
-      <EightSection />
+      <Cta />
     </>
   );
 }
