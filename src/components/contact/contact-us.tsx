@@ -42,7 +42,7 @@ const ContactForm: React.FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setStatus("loading");
-    const FORMSPREE_FORM_ID = "xgovgwry"; 
+    const FORMSPREE_FORM_ID = "xgovgwry";
 
     try {
       const response = await fetch(
@@ -113,17 +113,22 @@ const ContactForm: React.FC = () => {
                   <div className="flex items-center gap-3">
                     <img src={Whatsapp} alt="" className="h-8 w-8" />
 
-                    <a  href="tel:+919674771591"
-                    className="text-base sm:text-lg font-light font-outfit text-gray-700">
+                    <a
+                      href="tel:+919674771591"
+                      className="text-base sm:text-lg font-light font-outfit text-gray-700"
+                    >
                       +91 96747 71591
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <img src={Mail} alt="" className="h-8 w-8" />
 
-                    <a href="mailto:support@hisaabsathi.com" className="text-base sm:text-lg font-outfit font-light text-gray-700">
+                    <a
+                      href="mailto:support@hisaabsathi.com"
+                      className="text-base sm:text-lg font-outfit font-light text-gray-700"
+                    >
                       support@hisaabsathi.com
-                    </a >
+                    </a>
                   </div>
                 </div>
               </div>
@@ -259,7 +264,7 @@ const ContactForm: React.FC = () => {
                 {status === "loading" ? "Sending..." : "Contact Us"}
               </button>
               {status === "success" && (
-                <div className="bg-success border border-green-200 text-green-800 px-4 py-3 rounded-lg text-center text-sm md:text-base">
+                <div className="bg-success border font-outfit border-green-200 text-green-800 px-4 py-3 rounded-lg text-center text-sm md:text-base">
                   ✓ Message sent successfully! We'll get back to you soon.
                 </div>
               )}

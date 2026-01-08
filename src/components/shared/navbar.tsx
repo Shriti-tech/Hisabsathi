@@ -146,7 +146,7 @@ const Navbar = () => {
                   <NavContent closeSheet={() => setOpen(false)} />
                   <SheetClose asChild>
                     <Button
-                      className="font-medium cursor-pointer border-2 border-[#D9D9D9] bg-[#F2F2F2]"
+                      className="font-medium cursor-pointer border-2 border-[#D9D9D9] bg-[#F2F2F2] rounded-xl "
                       asChild
                     >
                       <a href="https://my.hisaabsathi.com">Login to portal</a>

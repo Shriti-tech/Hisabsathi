@@ -24,6 +24,7 @@ module.exports = {
         tertiary:"#F6A221",
         success:"#16A34A",
         foreground: 'hsl(var(--foreground))',
+        borderColor:"#979797",
     
       },
       fontFamily: {

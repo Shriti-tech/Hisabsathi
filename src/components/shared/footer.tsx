@@ -36,7 +36,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
 
 const Footer: React.FC = () => {
   return (
-    <footer className="font-outfit bg-white w-full flex justify-center pt-8 md:pt-16 lg:pt-20 px-4 md:px-6 left-0 right-0 z-40 bottom-0 ">
+    <footer className="font-outfit bg-background w-full flex justify-center pt-8 md:pt-16 lg:pt-20 px-4 md:px-6 left-0 right-0 z-40 bottom-0 ">
       <div className="flex flex-col max-w-7xl bg-white shadow-sm mx-auto w-full py-6 md:py-10 lg:py-12 px-4 md:px-8 lg:px-12 border-2 border-inputBorder rounded-t-2xl md:rounded-t-3xl">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols lg:grid-cols-12 gap-10 lg:gap-12">
@@ -79,6 +79,17 @@ const Footer: React.FC = () => {
 
           {/* Links Sections Container */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-6 lg:gap-8 lg:col-span-8">
+            {/* Quick Links Section */}
+            <div className="flex flex-col gap-3 md:gap-4">
+              <h4 className="font-semibold text-sm md:text-base lg:text-lg">
+                Quick Links
+              </h4>
+              <div className="flex flex-col gap-2">
+                <FooterLink href="/">Home</FooterLink>
+                <FooterLink href="/">Features</FooterLink>
+                <FooterLink href="/">Company</FooterLink>
+              </div>
+            </div>
             {/* Legal Section */}
             <div className="flex flex-col gap-3 md:gap-4">
               <h4 className="font-semibold text-sm md:text-base  lg:text-lg">
@@ -89,18 +100,6 @@ const Footer: React.FC = () => {
                 <FooterLink href="/">Refund Policy</FooterLink>
                 <FooterLink href="/">Terms of Service</FooterLink>
                 <FooterLink href="/">Refer & Earn</FooterLink>
-              </div>
-            </div>
-
-            {/* Quick Links Section */}
-            <div className="flex flex-col gap-3 md:gap-4">
-              <h4 className="font-semibold text-sm md:text-base lg:text-lg">
-                Quick Links
-              </h4>
-              <div className="flex flex-col gap-2">
-                <FooterLink href="/">Home</FooterLink>
-                <FooterLink href="/">Features</FooterLink>
-                <FooterLink href="/">Company</FooterLink>
               </div>
             </div>
 
@@ -120,7 +119,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Border and Copyright */}
-        <div className="border-t border-input mt-8 md:mt-12 mb-6 md:mb-8 hidden md:block"></div>
+        <div className="border-t border-borderColor mt-8 md:mt-12 mb-6 md:mb-8 hidden md:block"></div>
         <div className="text-center text-sm hidden md:block">
           <p>© {new Date().getFullYear()} Hisaab Sathi. All Rights Reserved.</p>
         </div>
