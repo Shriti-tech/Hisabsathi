@@ -101,7 +101,7 @@ const Footer: React.FC = () => {
                 <FooterLink href="/terms-of-service">
                   Terms of Service
                 </FooterLink>
-                <FooterLink href="/">Refer & Earn</FooterLink>
+                <FooterLink href="/refer-and-earn">Refer & Earn</FooterLink>
               </div>
             </div>
 
