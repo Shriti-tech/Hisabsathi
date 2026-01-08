@@ -114,7 +114,7 @@ const Navbar = () => {
 
   return (
     <nav className=" w-full h-20  flex items-center font-outfit px-4  md:px-10 lg:px-16 xl:px-20 2xl:px-74 bg-background fixed top-0 z-50">
-      <div className="  w-full flex items-center justify-between gap-4">
+      <div className="  w-full max-w-7xl  mx-auto flex items-center justify-between gap-4">
         <div className="flex-shrink-0 ">
           <Logo />
         </div>
@@ -146,7 +146,7 @@ const Navbar = () => {
                   <NavContent closeSheet={() => setOpen(false)} />
                   <SheetClose asChild>
                     <Button
-                      className="font-medium cursor-pointer border-2 border-[#D9D9D9] bg-[#F2F2F2] rounded-xl "
+                      className="font-medium cursor-pointer border-2 border-[#D9D9D9] bg-[#F2F2F2] rounded-xl w-fit "
                       asChild
                     >
                       <a href="https://my.hisaabsathi.com">Login to portal</a>

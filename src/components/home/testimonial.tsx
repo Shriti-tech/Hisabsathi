@@ -1,42 +1,11 @@
 import React from "react";
-
+import { testimonials } from "@/constants/testimonial";
 interface Testimonial {
   name: string;
   image: string;
   title: string;
   quote: string;
 }
-
-const testimonials: Testimonial[] = [
-  {
-    name: "Suman Mondal",
-    image: "sixthSection/person-1.png",
-    title: "DTDC Franchise owner, Shapoorji",
-    quote:
-      "We are addicted to Hisaab Sathi and use it everyday. It makes our job so easy!",
-  },
-  {
-    name: "Rahul Saha",
-    image: "sixthSection/person-2.jpg",
-    title: "Delhivery Channel Partner, New Town",
-    quote:
-      "Billing is no longer a headache. Orders go in and invoices come out. Simple and reliable.",
-  },
-  {
-    name: "Priya Sharma",
-    image: "sixthSection/person-3.jpg",
-    title: "Blue Dart Franchise owner, Kolkata",
-    quote:
-      "Customer ledgers are always organized. No more missed payments or confusion.",
-  },
-  {
-    name: "Amit Kumar",
-    image: "sixthSection/person-4.jpg",
-    title: "Ecom Express Partner, Mumbai",
-    quote:
-      "The best software for courier business. Everything is automated and error-free.",
-  },
-];
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <div className="font-outfit w-[280px] xs:w-[300px] md:w-[360px] lg:w-[400px] h-[380px] xs:h-[420px] md:h-[480px] lg:h-[500px] flex-shrink-0 rounded-xl overflow-hidden relative group mx-2 md:mx-3">
@@ -73,7 +42,7 @@ const TestimonialMarquee: React.FC = () => {
         <h2 className="font-instrument  text-3xl sm:text-4xl md:text-5xl lg:text-80  mb-2 sm:mb-3 leading-tight">
           Stories from the businesses we support
         </h2>
-        <p className="text-sm md:text-lg lg:text-xl xl:text-2xl font-outfit text-input font-light">
+        <p className="text-base md:text-lg lg:text-xl xl:text-2xl font-outfit text-input font-light">
           Trusted by businesses that actually move shipments
         </p>
       </div>

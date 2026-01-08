@@ -1,5 +1,5 @@
-import { useState, type FormEvent } from "react";
 import useMobile from "@/hooks/useMobile";
+import { useState, type FormEvent } from "react";
 const HeroSection = () => {
   const [isFocused, setIsFocused] = useState(false);
   const [status, setStatus] = useState<
@@ -53,7 +53,7 @@ const HeroSection = () => {
       <div className="w-full max-w-7xl mx-auto  ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center   ">
           <div className="flex flex-col gap-6 sm:gap-8 ">
-            <div className="space-y-4 sm:space-y-6">
+            <div className="space-y-4 sm:space-y-6 ">
               <h1
                 className={`${
                   isMobile
@@ -84,9 +84,9 @@ const HeroSection = () => {
 
             <form onSubmit={handleSubmit} className="w-full max-w-xl">
               <div
-                className={`flex flex-row items-stretch border-2 ${
+                className={`flex flex-row items-stretch border-2 bg-white pl-3  pr-2 py-2 ${
                   isFocused ? "border-inputBorder" : "border-inputBorder"
-                } rounded-lg p-1 shadow transition-colors`}
+                } rounded-[10px] shadow-[1px_2px_3px_0px_rgba(0,0,0,0.05)]  outline outline-1 outline-offset-[-1px] outline-gray-200 `}
               >
                 <input
                   type="email"
@@ -96,7 +96,7 @@ const HeroSection = () => {
                     setInputValue(e.target.value)
                   }
                   placeholder="Enter mobile / email"
-                  className="flex-1 px-1 bg-transparent text-input placeholder:text-Input  placeholder:font-outfit placeholder:font-light outline-none text-sm sm:text-base"
+                  className="flex-1 px-1 bg-white text-input placeholder:text-Input  placeholder:font-outfit placeholder:font-light outline-none text-sm sm:text-base"
                   onFocus={() => setIsFocused(true)}
                   onBlur={() => setIsFocused(false)}
                   required
@@ -104,19 +104,19 @@ const HeroSection = () => {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="font-outfit py-2 px-2 bg-primary rounded-md text-white  text-sm lg:text-base shadow-md whitespace-nowrap flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="font-outfit py-2 px-2 bg-primary rounded-md text-white  text-sm lg:text-base shadow-[0px_1px_2px_0px_rgba(22,25,80,1.00)] whitespace-nowrap flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {status === "loading" ? "Sending..." : "Book a demo"}
                 </button>
               </div>
               <div className="h-8 mt-2 ">
                 {status === "success" && (
-                  <p className="text-green-600 text-sm font-outfit">
+                  <p className="text-success text-sm font-outfit">
                     ✓ Request sent! We'll contact you soon.
                   </p>
                 )}
                 {status === "error" && (
-                  <p className="text-red-600 text-sm font-outfit">
+                  <p className="text-destructive text-sm font-outfit">
                     ✗ Something went wrong. Please try again.
                   </p>
                 )}
@@ -171,7 +171,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Image */}
-          <div className="flex justify-center ">
+          <div className="flex justify-center  ">
             <div className="relative w-full  max-w-lg md:max-w-md lg:max-w-xl xl:max-w-2xl">
               <img
                 src="/homeImages/hero-image.png"

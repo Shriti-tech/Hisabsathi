@@ -85,9 +85,9 @@ const Footer: React.FC = () => {
                 Quick Links
               </h4>
               <div className="flex flex-col gap-2">
-                <FooterLink href="/">Home</FooterLink>
-                <FooterLink href="/">Features</FooterLink>
-                <FooterLink href="/">Company</FooterLink>
+                <FooterLink href="/#features">Features</FooterLink>
+                <FooterLink href="/">Pricing</FooterLink>
+                <FooterLink href="/contact">Contact</FooterLink>
               </div>
             </div>
             {/* Legal Section */}
@@ -96,9 +96,11 @@ const Footer: React.FC = () => {
                 Legal
               </h4>
               <div className="flex flex-col gap-2 text-base md:text-sm">
-                <FooterLink href="/">Privacy Policy</FooterLink>
-                <FooterLink href="/">Refund Policy</FooterLink>
-                <FooterLink href="/">Terms of Service</FooterLink>
+                <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
+                <FooterLink href="/refund-policy">Refund Policy</FooterLink>
+                <FooterLink href="/terms-of-service">
+                  Terms of Service
+                </FooterLink>
                 <FooterLink href="/">Refer & Earn</FooterLink>
               </div>
             </div>

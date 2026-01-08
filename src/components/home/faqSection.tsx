@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { faqs } from "@/constants/faq-data.ts";
+import { Link } from "react-router-dom";
 
 const FAQAccordion: React.FC = () => {
   return (
@@ -22,9 +23,12 @@ const FAQAccordion: React.FC = () => {
             <p className="font-outfit text-gray-600 text-base sm:text-lg mb-6 lg:mb-8">
               Everything you need to know about Hisaab Sathi
             </p>
-            <button className="bg-primary text-background px-6 py-2.5 rounded-md text-sm font-medium transition-colors">
+            <Link
+              to="/contact"
+              className=" px-6 py-2.5  font-medium transition-colors font-outfit  bg-primary rounded-md text-white  text-sm lg:text-base shadow-[0px_1px_2px_0px_rgba(22,25,80,1.00)] whitespace-nowrap flex-shrink-0 "
+            >
               Book a demo
-            </button>
+            </Link>
           </div>
 
           {/* Right Section - FAQ Accordion */}

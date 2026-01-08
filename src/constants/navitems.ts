@@ -1,7 +1,7 @@
 // Navigation menu items
 export const NavmenuItems = [
   { title: "Features", path: "#features" },
-  { title: "Company", path: "#company" },
+  { title: "Pricing", path: "#pricing" },
   { title: "Contact", path: "/contact" },
 ];
 

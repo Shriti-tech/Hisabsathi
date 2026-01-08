@@ -1,5 +1,5 @@
-import eightImage from "/eight-Section/eight-section-illustration.png";
-
+import eightImage from "/cta-section/cta-section-illustration.png";
+import { Link } from "react-router-dom";
 function Cta() {
   return (
     <div className="bg-background w-full min-h-[80vh] flex px-4 pt-10 lg:pt-0 justify-center items-center">
@@ -16,9 +16,12 @@ function Cta() {
             numbers.
           </p>
           <div className="mt-2">
-            <button className="bg-primary shadow-md text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200">
+            <Link
+              to="/contact"
+              className="bg-primary  text-white font-outfit font-medium px-6 py-3 rounded-lg shadow-md"
+            >
               Try Hisaab Sathi
-            </button>
+            </Link>
           </div>
         </div>
 
