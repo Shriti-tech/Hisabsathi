@@ -60,7 +60,7 @@ const PricingPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background mt-20 border-8 font-outfit border-red-800 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-background mt-20  font-outfit py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-instrument text-center  mb-16">
           Flexible plans for every business.
