@@ -28,7 +28,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, label }) => (
 const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => (
   <a
     href={href}
-    className="text-input font-outfit font-light text-sm md:text-base lg:text-lg"
+    className="text-input font-outfit font-light text-[14px] md:text-[16px]"
   >
     {children}
   </a>
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-6 lg:gap-8 lg:col-span-8">
             {/* Quick Links Section */}
             <div className="flex flex-col gap-3 md:gap-4">
-              <h4 className="font-semibold text-sm md:text-base lg:text-lg">
+              <h4 className="font-medium text-[14px] md:text-[16px]">
                 Quick Links
               </h4>
               <div className="flex flex-col gap-2">
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
             </div>
             {/* Legal Section */}
             <div className="flex flex-col gap-3 md:gap-4">
-              <h4 className="font-semibold text-sm md:text-base  lg:text-lg">
+              <h4 className="font-medium  text-[14px] md:text-[16px]">
                 Legal
               </h4>
               <div className="flex flex-col gap-2 text-base md:text-sm">
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
 
             {/* Explore Section */}
             <div className="flex flex-col gap-3 md:gap-4">
-              <h4 className="font-semibold text-sm md:text-base lg:text-lg">
+              <h4 className="font-medium  text-[14px] md:text-[16px]">
                 Explore
               </h4>
               <div className="flex flex-col gap-2">
@@ -121,7 +121,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Border and Copyright */}
-        <div className="border-t border-borderColor mt-8 md:mt-12 mb-6 md:mb-8 hidden md:block"></div>
+        <div className="border-t border border-borderColor mt-8 md:mt-12 mb-6 md:mb-8 hidden md:block opacity-40"></div>
         <div className="text-center text-sm hidden md:block">
           <p>© {new Date().getFullYear()} Hisaab Sathi. All Rights Reserved.</p>
         </div>

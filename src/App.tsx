@@ -5,6 +5,7 @@ import RefundPolicyPage from "./components/policy/refund-policy";
 import PrivacyPolicyPage from "./components/policy/privacy-policy";
 import TermsOfServicePage from "./components/policy/terms-service";
 import ReferEarnPage from "./components/policy/refer-earn";
+import PricingPage from "./components/pricing/pricing";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms-of-service" element={<TermsOfServicePage />} />
           <Route path="/refer-and-earn" element={<ReferEarnPage />} />
+          <Route path="/pricing" element={<PricingPage/>}/>
         </Routes>
       </div>
     </>
