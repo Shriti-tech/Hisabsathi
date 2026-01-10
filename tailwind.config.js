@@ -37,12 +37,7 @@ module.exports = {
         '16':"16px",
         '56':"56px",
       },
-      
-//    borderRadius: {
-//   lg: 'var(--radius)',           
-//   md: 'calc(var(--radius) - 2px)', 
-//   sm: 'calc(var(--radius) - 4px)', 
-// },
+
       boxShadow: {
         '2xs': 'var(--shadow-2xs)',
         xs: 'var(--shadow-xs)',
