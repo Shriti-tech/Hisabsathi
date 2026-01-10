@@ -59,16 +59,31 @@ const PricingPage: React.FC = () => {
         { text: "Monthly business summary report", included: true },
       ],
     },
+    {
+      name: "Custom",
+      price: 2999,
+      period: "per month",
+      description: "Tailored solutions based on your business needs",
+      features: [
+        { text: "Custom order limits", included: true },
+        { text: "Custom number of users", included: true },
+        { text: "Scalable database size", included: true },
+        { text: "Custom automation workflows", included: true },
+        { text: "Advanced analytics & reports", included: true },
+        { text: "Priority customer support", included: true },
+        { text: "Dedicated account manager", included: true },
+      ],
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background mt-20  font-outfit py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-full mx-auto">
         <h1 className="text-4xl md:text-5xl font-instrument text-center  mb-16">
           Flexible plans for every business.
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {plans.map((plan) => (
             <div
               key={plan.name}
@@ -76,7 +91,7 @@ const PricingPage: React.FC = () => {
                 plan.highlighted
                   ? "border-primary shadow bg-gradient-to-b from-white to-[#F0F2FF]"
                   : "border-inputBorder bg-white"
-              } overflow-hidden flex flex-col  max-w-sm min-h-[500px]`}
+              } overflow-hidden flex flex-col   min-h-[500px]`}
             >
               <div className="p-6 pb-4">
                 <h2
