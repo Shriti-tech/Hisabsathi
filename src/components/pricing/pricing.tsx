@@ -10,7 +10,7 @@ interface PricingFeature {
 
 interface PricingPlan {
   name: string;
-  price: number;
+  price: String | number;
   period: string;
   description: string;
   features: PricingFeature[];
@@ -22,7 +22,7 @@ const PricingPage: React.FC = () => {
     {
       name: "Free",
       price: 499,
-      period: "per month",
+      period: "/per month",
       description: "Great for trying out Hisaab Sathi features",
       features: [
         { text: "900 orders creation", included: true },
@@ -35,7 +35,7 @@ const PricingPage: React.FC = () => {
     {
       name: "Professional",
       price: 999,
-      period: "per month",
+      period: "/per month",
       description: "Best for small business owners",
       highlighted: true,
       features: [
@@ -49,7 +49,7 @@ const PricingPage: React.FC = () => {
     {
       name: "Enterprise",
       price: 1999,
-      period: "per month",
+      period: "/per month",
       description: "Best for growing large business owners",
       features: [
         { text: "6000+ orders creation", included: true },
@@ -60,18 +60,15 @@ const PricingPage: React.FC = () => {
       ],
     },
     {
-      name: "Custom",
-      price: 2999,
-      period: "per month",
+      name: "Enterprise",
+      price: "Custom",
+      period: "",
       description: "Tailored solutions based on your business needs",
       features: [
-        { text: "Custom order limits", included: true },
-        { text: "Custom number of users", included: true },
-        { text: "Scalable database size", included: true },
-        { text: "Custom automation workflows", included: true },
-        { text: "Advanced analytics & reports", included: true },
-        { text: "Priority customer support", included: true },
-        { text: "Dedicated account manager", included: true },
+        { text: "All Premium Plan features", included: true },
+        { text: "Enterprise level customization", included: true },
+        { text: "Advanced security options", included: true },
+        { text: "Dedicated support manager", included: true },
       ],
     },
   ];
@@ -104,9 +101,13 @@ const PricingPage: React.FC = () => {
                   {plan.name}
                 </h2>
                 <div className="flex items-baseline mb-2 ">
-                  <span className="text-4xl font-medium ">₹{plan.price}</span>
+                  <span className="text-4xl font-medium">
+                    {typeof plan.price === "number"
+                      ? `₹${plan.price}`
+                      : plan.price}
+                  </span>
                   <span className="ml-2 text-input font-light text-sm">
-                    /{plan.period}
+                    {plan.period}
                   </span>
                 </div>
                 <p className="text-sm text-input font-light mb-6 ">
