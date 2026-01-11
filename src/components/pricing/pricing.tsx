@@ -2,6 +2,7 @@ import React from "react";
 import { Check } from "lucide-react";
 import FAQAccordion from "../home/faqSection";
 import Cta from "../home/cta";
+import { useNavigate } from "react-router-dom";
 
 interface PricingFeature {
   text: string;
@@ -18,6 +19,7 @@ interface PricingPlan {
 }
 
 const PricingPage: React.FC = () => {
+  const navigate = useNavigate();
   const plans: PricingPlan[] = [
     {
       name: "Free",
@@ -115,6 +117,7 @@ const PricingPage: React.FC = () => {
                 </p>
                 <hr className="py-2 border-dashed" />
                 <button
+                  onClick={() => navigate("/contact")}
                   className={`w-full py-3 px-4 rounded-[10px] font-light transition-colors  ${
                     plan.highlighted
                       ? "bg-primary text-white"
