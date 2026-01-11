@@ -1,5 +1,6 @@
 import useMobile from "@/hooks/useMobile";
 import { useState, type FormEvent } from "react";
+import { toast } from "sonner";
 const HeroSection = () => {
   const [isFocused, setIsFocused] = useState(false);
   const [status, setStatus] = useState<
@@ -35,15 +36,33 @@ const HeroSection = () => {
 
       if (response.ok) {
         setStatus("success");
+        toast.success(
+          "Message sent successfully! We'll get back to you soon.",
+          {
+            style: {
+              color: "#16A34A",
+            },
+          }
+        );
         setInputValue("");
         setTimeout(() => setStatus("idle"), 5000);
       } else {
         setStatus("error");
+        toast.error("Oops! Something went wrong. Please try again.", {
+          style: {
+            color: "#DC2626",
+          },
+        });
         setTimeout(() => setStatus("idle"), 5000);
       }
     } catch (error) {
       console.error("Form error:", error);
       setStatus("error");
+      toast.error("Oops! Something went wrong. Please try again.", {
+        style: {
+          color: "#DC2626",
+        },
+      });
       setTimeout(() => setStatus("idle"), 5000);
     }
   };
@@ -108,18 +127,6 @@ const HeroSection = () => {
                 >
                   {status === "loading" ? "Sending..." : "Book a demo"}
                 </button>
-              </div>
-              <div className="h-8 mt-2 ">
-                {status === "success" && (
-                  <p className="text-success text-sm font-outfit">
-                    ✓ Request sent! We'll contact you soon.
-                  </p>
-                )}
-                {status === "error" && (
-                  <p className="text-destructive text-sm font-outfit">
-                    ✗ Something went wrong. Please try again.
-                  </p>
-                )}
               </div>
             </form>
 

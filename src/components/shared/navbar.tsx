@@ -126,7 +126,9 @@ const Navbar = () => {
               variant="outline"
               asChild
             >
-              <a href="https://my.hisaabsathi.com">Login to portal</a>
+              <a href="https://my.hisaabsathi.com" target="new">
+                Login to portal
+              </a>
             </Button>
           </>
         ) : (
@@ -149,7 +151,9 @@ const Navbar = () => {
                       className="font-medium cursor-pointer border-2 border-[#D9D9D9] bg-[#F2F2F2] rounded-xl w-fit "
                       asChild
                     >
-                      <a href="https://my.hisaabsathi.com">Login to portal</a>
+                      <a href="https://my.hisaabsathi.com" target="new">
+                        Login to portal
+                      </a>
                     </Button>
                   </SheetClose>
                 </div>

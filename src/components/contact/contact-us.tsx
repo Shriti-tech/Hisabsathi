@@ -3,6 +3,7 @@ import { Star } from "lucide-react";
 import { personImages } from "@/constants/person";
 import Mail from "/public/contact-icons/mail.png";
 import Whatsapp from "/public/contact-icons/whatsapp.png";
+import { toast } from "sonner";
 interface FormData {
   name: string;
   phone: string;
@@ -65,6 +66,14 @@ const ContactForm: React.FC = () => {
 
       if (response.ok) {
         setStatus("success");
+        toast.success(
+          "Message sent successfully! We'll get back to you soon.",
+          {
+            style: {
+              color: "#16A34A",
+            },
+          }
+        );
         setFormData({
           name: "",
           phone: "",
@@ -75,11 +84,21 @@ const ContactForm: React.FC = () => {
         setTimeout(() => setStatus("idle"), 5000);
       } else {
         setStatus("error");
+        toast.error("Oops! Something went wrong. Please try again.", {
+          style: {
+            color: "#DC2626",
+          },
+        });
         setTimeout(() => setStatus("idle"), 5000);
       }
     } catch (error) {
       console.error("Form submission error:", error);
       setStatus("error");
+      toast.error("Oops! Something went wrong. Please try again.", {
+        style: {
+          color: "#DC2626",
+        },
+      });
       setTimeout(() => setStatus("idle"), 5000);
     }
   };
@@ -259,20 +278,10 @@ const ContactForm: React.FC = () => {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full bg-primary text-white font-semibold py-3 md:py-4 rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-primary text-white font-semibold py-3 md:py-3 rounded-[10px] disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {status === "loading" ? "Sending..." : "Contact Us"}
               </button>
-              {status === "success" && (
-                <div className="bg-success border font-outfit border-green-200 text-green-800 px-4 py-3 rounded-lg text-center text-sm md:text-base">
-                  ✓ Message sent successfully! We'll get back to you soon.
-                </div>
-              )}
-              {status === "error" && (
-                <div className="bg-success border border-red-200 text-red-800 px-4 py-3 rounded-lg text-center text-sm md:text-base">
-                  ✗ Oops! Something went wrong. Please try again.
-                </div>
-              )}
               <p className="text-xs md:text-sm text-gray-500 text-center leading-relaxed pt-2">
                 You'll hear from us within 2 hours (during business hours). Your
                 info is safe and will never be shared.

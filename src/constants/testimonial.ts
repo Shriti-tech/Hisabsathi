@@ -14,7 +14,7 @@ export const testimonials = [
       "Billing is no longer a headache. Orders go in and invoices come out. Simple and reliable.",
   },
   {
-    name: "Priya Sharma",
+    name: "Rajesh kumar",
     image: "testimonials/person-3.jpg",
     title: "Blue Dart Franchise owner, Kolkata",
     quote:
@@ -26,5 +26,40 @@ export const testimonials = [
     title: "Ecom Express Partner, Mumbai",
     quote:
       "The best software for courier business. Everything is automated and error-free.",
+  },
+  {
+    name: "Rohit Sharma",
+    image: "testimonials/person-5.jpg",
+    title: "Delhivery Franchise Owner, Delhi",
+    quote:
+      "This platform simplified our daily operations. Shipment tracking and billing are completely seamless.",
+  },
+  {
+    name: "Vikram Singh",
+    image: "testimonials/person-6.jpg",
+    title: "Courier Service Owner, Jaipur",
+    quote:
+      "Very reliable and easy to use. Our error rate dropped significantly after switching to this software.",
+  },
+  {
+    name: "Ankit Verma",
+    image: "testimonials/person-7.jpg",
+    title: "Last-Mile Delivery Partner, Pune",
+    quote:
+      "Perfect for scaling a courier business. From order management to payouts, everything works smoothly.",
+  },
+  {
+    name: "Suresh Yadav",
+    image: "testimonials/person-8.jpg",
+    title: "Logistics Supervisor, Gurugram",
+    quote:
+      "The automation and reporting features have made our entire workflow faster and more accurate.",
+  },
+  {
+    name: "Manoj Patel",
+    image: "testimonials/person-9.jpg",
+    title: "Regional Courier Partner, Surat",
+    quote:
+      "A complete courier management solution. Easy onboarding and excellent customer support.",
   },
 ];

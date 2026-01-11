@@ -86,15 +86,13 @@ const Footer: React.FC = () => {
               </h4>
               <div className="flex flex-col gap-2">
                 <FooterLink href="/#features">Features</FooterLink>
-                <FooterLink href="/">Pricing</FooterLink>
+                <FooterLink href="/pricing">Pricing</FooterLink>
                 <FooterLink href="/contact">Contact</FooterLink>
               </div>
             </div>
             {/* Legal Section */}
             <div className="flex flex-col gap-3 md:gap-4">
-              <h4 className="font-medium  text-[14px] md:text-[16px]">
-                Legal
-              </h4>
+              <h4 className="font-medium  text-[14px] md:text-[16px]">Legal</h4>
               <div className="flex flex-col gap-2 text-base md:text-sm">
                 <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
                 <FooterLink href="/refund-policy">Refund Policy</FooterLink>

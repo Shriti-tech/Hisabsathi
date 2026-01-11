@@ -22,10 +22,10 @@ const PricingPage: React.FC = () => {
   const navigate = useNavigate();
   const plans: PricingPlan[] = [
     {
-      name: "Free",
+      name: "Basic",
       price: 499,
       period: "/per month",
-      description: "Great for trying out Hisaab Sathi features",
+      description: "Great for trying out Hisaab Sathi ",
       features: [
         { text: "900 orders creation", included: true },
         { text: "Single user login", included: true },
@@ -35,7 +35,7 @@ const PricingPage: React.FC = () => {
       ],
     },
     {
-      name: "Professional",
+      name: "Standard",
       price: 999,
       period: "/per month",
       description: "Best for small business owners",
@@ -45,14 +45,14 @@ const PricingPage: React.FC = () => {
         { text: "3 users login", included: true },
         { text: "10GB Database", included: true },
         { text: "Automated payment due reminders", included: true },
-        { text: "Monthly business summary report", included: true },
+        { text: "Monthly business summary report", included: false },
       ],
     },
     {
-      name: "Enterprise",
+      name: "Premium",
       price: 1999,
       period: "/per month",
-      description: "Best for growing large business owners",
+      description: "Best for growing large busineses",
       features: [
         { text: "6000+ orders creation", included: true },
         { text: "Unlimited users login", included: true },
@@ -65,7 +65,7 @@ const PricingPage: React.FC = () => {
       name: "Enterprise",
       price: "Custom",
       period: "",
-      description: "Tailored solutions based on your business needs",
+      description: "Plan based on your business needs",
       features: [
         { text: "All Premium Plan features", included: true },
         { text: "Enterprise level customization", included: true },
@@ -95,9 +95,7 @@ const PricingPage: React.FC = () => {
               <div className="p-6 pb-4">
                 <h2
                   className={`text-lg font-light mb-4 ${
-                    plan.highlighted
-                      ? "text-primary font-semibold"
-                      : "text-input"
+                    plan.highlighted ? "text-primary font-medium" : "text-input"
                   }`}
                 >
                   {plan.name}
