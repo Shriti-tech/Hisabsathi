@@ -108,7 +108,7 @@ const HeroSection = () => {
                 } rounded-[10px] shadow-[1px_2px_3px_0px_rgba(0,0,0,0.05)]  outline outline-1 outline-offset-[-1px] outline-gray-200 `}
               >
                 <input
-                  type="email"
+                type="text"
                   name="contact"
                   value={inputValue}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
