@@ -11,7 +11,7 @@ import { Separator } from "@/components/ui/separator";
             Policy explains how we collect, use, and protect your data when you
             use our platform.
           </p>
-          <p className="italic text-gray-500 mt-4">Last updated: 27/01/2025</p>
+          <p className="italic text-gray-500 mt-4">Last updated: 11/01/2026</p>
           <Separator className="bg-gray-200 mt-6" />
         </div>
 

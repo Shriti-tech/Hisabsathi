@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
       <div className="w-full max-w-7xl mx-auto py-3 px-4 flex flex-col gap-8">
         <div>
           <h1 className="text-3xl md:text-[48px] font-bold">Refer & Earn Policy</h1>
-          <p className="italic text-gray-500 mt-2">Last updated: 27/01/2025</p>
+          <p className="italic text-gray-500 mt-2">Last updated: 11/01/2026</p>
           <Separator className="bg-gray-200 mt-6" />
         </div>
 
