@@ -1,8 +1,8 @@
 export const personImages = [
-  { title: "person-1", url: "/testimonials/person-1.png" },
-  { title: "person-2", url: "/testimonials/person-2.jpg" },
-  { title: "person-3", url: "/testimonials/person-3.jpg" },
-  { title: "person-4", url: "/testimonials/person-4.jpg" },
-  { title: "person-5", url: "/testimonials/person-5.jpg" },
-  { title: "person-6", url: "/testimonials/person-6.jpg" },
+  { title: "person-1", url: "/testimonials/1.png" },
+  { title: "person-2", url: "/testimonials/2.png" },
+  { title: "person-3", url: "/testimonials/3.png" },
+  { title: "person-4", url: "/testimonials/4.png" },
+  { title: "person-5", url: "/testimonials/5.png" },
+  { title: "person-6", url: "/testimonials/6.png" },
 ];

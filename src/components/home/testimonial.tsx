@@ -48,11 +48,14 @@ const TestimonialMarquee: React.FC = () => {
       </div>
 
       <div className="relative w-full overflow-hidden ">
-        <div className="flex animate-logo-cloud">
-          {Array(10)
+        <div className="flex ">
+          {Array(5)
             .fill(null)
             .map((_, groupIndex) => (
-              <div key={groupIndex} className="flex shrink-0">
+              <div
+                key={groupIndex}
+                className="flex shrink-0 animate-logo-cloud"
+              >
                 {testimonials.map((testimonial, index) => (
                   <TestimonialCard
                     key={`${groupIndex}-${index}`}

@@ -1,65 +1,72 @@
 export const testimonials = [
   {
-    name: "Suman Mondal",
-    image: "testimonials/person-1.png",
-    title: "DTDC Franchise owner, Shapoorji",
-    quote:
-      "We are addicted to Hisaab Sathi and use it everyday. It makes our job so easy!",
-  },
-  {
-    name: "Rahul Saha",
-    image: "testimonials/person-2.jpg",
-    title: "Delhivery Channel Partner, New Town",
-    quote:
-      "Billing is no longer a headache. Orders go in and invoices come out. Simple and reliable.",
-  },
-  {
-    name: "Rajesh kumar",
-    image: "testimonials/person-3.jpg",
-    title: "Blue Dart Franchise owner, Kolkata",
-    quote:
-      "Customer ledgers are always organized. No more missed payments or confusion.",
-  },
-  {
-    name: "Amit Kumar",
-    image: "testimonials/person-4.jpg",
-    title: "Ecom Express Partner, Mumbai",
-    quote:
-      "The best software for courier business. Everything is automated and error-free.",
-  },
-  {
-    name: "Rohit Sharma",
-    image: "testimonials/person-5.jpg",
-    title: "Delhivery Franchise Owner, Delhi",
-    quote:
-      "This platform simplified our daily operations. Shipment tracking and billing are completely seamless.",
-  },
-  {
-    name: "Vikram Singh",
-    image: "testimonials/person-6.jpg",
-    title: "Courier Service Owner, Jaipur",
-    quote:
-      "Very reliable and easy to use. Our error rate dropped significantly after switching to this software.",
-  },
-  {
     name: "Ankit Verma",
-    image: "testimonials/person-7.jpg",
-    title: "Last-Mile Delivery Partner, Pune",
+    image: "testimonials/1.png",
+    title: "DTDC Franchise Owner, Noida",
     quote:
-      "Perfect for scaling a courier business. From order management to payouts, everything works smoothly.",
+      "Hisaab Sathi saves us hours daily and removes billing stress completely from our courier operations.",
   },
   {
-    name: "Suresh Yadav",
-    image: "testimonials/person-8.jpg",
-    title: "Logistics Supervisor, Gurugram",
+    name: "Rohit Das",
+    image: "testimonials/2.png",
+    title: "Delhivery Channel Partner, Howrah",
     quote:
-      "The automation and reporting features have made our entire workflow faster and more accurate.",
+      "From order uploads to final invoices, everything works smoothly without manual calculation or errors.",
   },
   {
-    name: "Manoj Patel",
-    image: "testimonials/person-9.jpg",
-    title: "Regional Courier Partner, Surat",
+    name: "Vikas Singh",
+    image: "testimonials/3.png",
+    title: "Blue Dart Franchise Owner, Patna",
     quote:
-      "A complete courier management solution. Easy onboarding and excellent customer support.",
+      "Ledger tracking is crystal clear now and payment follow ups are faster than ever.",
+  },
+  {
+    name: "Manoj Yadav",
+    image: "testimonials/4.png",
+    title: "Ecom Express Partner, Pune",
+    quote:
+      "We replaced Excel completely and finally trust our billing numbers without double checking.",
+  },
+  {
+    name: "Sourav Ghosh",
+    image: "testimonials/5.jpg",
+    title: "DTDC Channel Partner, Durgapur",
+    quote:
+      "Rate charts apply automatically and invoices generate instantly, which keeps our business disciplined.",
+  },
+  {
+    name: "Nitin Agarwal",
+    image: "testimonials/6.png",
+    title: "Courier Franchise Owner, Jaipur",
+    quote:
+      "Reconciliation used to take days, now it finishes in minutes with accurate reports.",
+  },
+  {
+    name: "Deepak Mishra",
+    image: "testimonials/7.png",
+    title: "Logistics Partner, Indore",
+    quote:
+      "Hisaab Sathi feels built specifically for courier partners, not generic accounting software.",
+  },
+  {
+    name: "Arjun Patel",
+    image: "testimonials/8.png",
+    title: "Delivery Partner, Ahmedabad",
+    quote:
+      "Invoice generation is consistent and professional, which improves trust with our clients.",
+  },
+  {
+    name: "Kunal Mehta",
+    image: "testimonials/9.png",
+    title: "Courier Business Owner, Surat",
+    quote:
+      "Every shipment detail is tracked properly, so disputes and confusion have reduced drastically.",
+  },
+  {
+    name: "Sandeep Rana",
+    image: "testimonials/10.png",
+    title: "Last-Mile Partner, Gurugram",
+    quote:
+      "This software brings control, clarity, and speed to daily courier billing operations.",
   },
 ];
