@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
             <h4 className="font-medium text-[16px] md:text-[18px]">
               Stay in the know &amp; connect with us
             </h4>
-            <p className="text-lg text-input font-light">
+            <p className="text-[14px] md:text-[16px] text-input font-light">
               Subscribe to our newsletter. We promise we don't spam your emails!
             </p>
             <div className="flex items-center mt-2 border border-inputBorder rounded-full overflow-hidden pr-1 py-1 pl-4 bg-white shadow-sm">
@@ -116,9 +116,9 @@ const Footer: React.FC = () => {
               />
               <button
                 onClick={handleSubscribe}
-                className="bg-black text-white text-sm px-4 py-2 rounded-full font-light whitespace-nowrap flex items-center gap-1 hover:bg-gray-800 transition-colors"
+                className="bg-black text-white text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-light whitespace-nowrap flex items-center gap-1 hover:bg-gray-800 active:bg-gray-700 transition-colors touch-manipulation select-none"
               >
-                Subscribe <span className="text-base">›</span>
+                Subscribe <span className="text-sm sm:text-base">›</span>
               </button>
             </div>
           </div>

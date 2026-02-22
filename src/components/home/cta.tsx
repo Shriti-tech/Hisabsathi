@@ -10,7 +10,7 @@ function Cta() {
             This is what your day should{" "}
             <span className="font-instrument italic">not look like!</span>
           </h2>
-          <p className="font-outfit text-gray-600 font-light text-2xl sm:text-lg md:text-xl leading-relaxed">
+          <p className="font-outfit text-input font-light text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
             Jumping between sheets, registers, and calculators only creates
             errors and delays. It slows your business and hides your actual
             numbers.

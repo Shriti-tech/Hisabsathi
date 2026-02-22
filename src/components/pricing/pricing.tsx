@@ -59,7 +59,7 @@ const PricingPage: React.FC = () => {
     {
       name: "Enterprise",
       price: "Custom",
-      period: "",
+      period: "/ month billed annually",
       features: [
         { text: "All Premium Plan features", included: true },
         { text: "Enterprise level customization", included: true },
@@ -152,7 +152,7 @@ const PricingPage: React.FC = () => {
                 <div className="flex items-baseline mb-2 flex-col gap-2">
                   <span className="text-4xl font-medium">{getPrice(plan)}</span>
                   <span className="ml-2 text-input font-light text-sm">
-                    {typeof plan.price === "number"
+                    {typeof plan.price === "number" || plan.price === "Custom"
                       ? isAnnual
                         ? "/ month billed annually"
                         : "/ month billed monthly"
